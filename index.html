@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ msg }}</p>
+        111--{{ msg }}--222
+        <div v-text="info.name"></div>
+        <input type="text" v-module="msg">
+        <button @click="sayHi">click</button>
+    </div>
+    <script src="./dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello word",
+                info: {
+                    name: "Jack"
+                }
+            },
+            methods: {
+                sayHi() {
+                    console.log("hello, ", this.info.name)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
